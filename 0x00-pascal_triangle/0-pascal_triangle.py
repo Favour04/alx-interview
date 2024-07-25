@@ -29,7 +29,7 @@ def pascal_triangle(num):
         return [[1]]
     pascals = []
     for i in range(num):
-        fac = list(map(lambda n: int(f(i) / (fc(i - n) * f(n))), range(i + 1)))
+        fac = list(map(lambda n: int(f(i) / (f(i - n) * f(n))), range(i + 1)))
         pascals.append(fac)
 
     return pascals
