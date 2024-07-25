@@ -1,20 +1,17 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """
-0-main
-""" 
-import time
+Test
+"""
 pascal_triangle = __import__('0-pascal_triangle').pascal_triangle
 
 def print_triangle(triangle):
     """
-    Print the triangle
+    Print triangle (2D array)
     """
     for row in triangle:
         print("[{}]".format(",".join([str(x) for x in row])))
 
 
 if __name__ == "__main__":
-    start = time.time()
-    print_triangle(pascal_triangle(500))
-    end = time.time()
-    print("the total run time is - ", end - start)
+    print_triangle(pascal_triangle(10))
