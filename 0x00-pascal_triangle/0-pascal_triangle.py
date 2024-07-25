@@ -23,6 +23,8 @@ def pascal_triangle(num):
     """
     if num == 0:
         return []
+    if num == 1:
+        return [[1]]
     pascals = []
     for i in range(num):
         fac = list(map(lambda n: int(f(i) / (f(i - n) * f(n))), range(i + 1)))
