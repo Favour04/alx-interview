@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-Get factorial of a number
+    This module contain functions
+    which will hepl in hetting pascal triangle
 """
 
 
-def f(num):
+def fc(num):
     """
         This fuction is used to get the factorial of a number
+        given to it
     """
     if num == 0:
         return 1
@@ -27,7 +29,7 @@ def pascal_triangle(num):
         return [[1]]
     pascals = []
     for i in range(num):
-        fac = list(map(lambda n: int(f(i) / (f(i - n) * f(n))), range(i + 1)))
+        fac = list(map(lambda n: int(fc(i) / (fc(i - n) * f(n))), range(i + 1)))
         pascals.append(fac)
 
     return pascals
