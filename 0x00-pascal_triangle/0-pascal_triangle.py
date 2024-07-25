@@ -16,7 +16,7 @@ def fc(num):
     if num <= 1:
         return num
     else:
-        return num * f(num - 1)
+        return num * fc(num - 1)
 
 
 def pascal_triangle(num):
@@ -29,7 +29,7 @@ def pascal_triangle(num):
         return [[1]]
     pascals = []
     for i in range(num):
-        fac = list(map(lambda n: int(fc(i) / (fc(i - n) * f(n))), range(i + 1)))
+        fac = list(map(lambda n: int(fc(i) / (fc(i - n) * fc(n))), range(i + 1)))
         pascals.append(fac)
 
     return pascals
