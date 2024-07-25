@@ -21,6 +21,8 @@ def pascal_triangle(num):
     """
         The function generate a pascal triangle
     """
+    if num == 0:
+        return []
     pascals = []
     for i in range(num):
         fac = list(map(lambda n: int(f(i) / (f(i - n) * f(n))), range(i + 1)))
