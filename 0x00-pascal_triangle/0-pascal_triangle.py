@@ -22,7 +22,7 @@ def pascal_triangle(num):
         The function generate a pascal triangle
     """
     pascals = []
-    for i in range(num + 1):
+    for i in range(num):
         fac = list(map(lambda n: int(f(i) / (f(i - n) * f(n))), range(i + 1)))
         pascals.append(fac)
 
