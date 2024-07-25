@@ -15,6 +15,9 @@ def factorial(num):
 generate pascal tiangle
 """
 def pascal_triangle(num):
+    """
+    The function generate a pascal triangle
+    """
      pascals = []
      for i in range(num + 1):
           fac = list(map(lambda n: int(factorial(i) / (factorial(i - n) * factorial(n))), range(i + 1)))
