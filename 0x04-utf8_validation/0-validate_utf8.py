@@ -9,6 +9,8 @@ def validUTF8(data):
     """
         Simple implementation
     """
+    if len(data) == 0:
+        return False
     real_len = len(data)
     i = 0
     for num in range(real_len):
