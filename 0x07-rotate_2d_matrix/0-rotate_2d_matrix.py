@@ -20,6 +20,11 @@ python matrix clockwise
 def rotateMatrix(mat):
     xaxis = len(mat)
     yaxis = len(mat[0])
+    
+    if xaxis >= yaxis:
+        N = xaxis
+    else:
+        N = yaxis 
     # Consider all squares one by one
     for x in range(0, int(N / 2)):
  
@@ -28,7 +33,7 @@ def rotateMatrix(mat):
         for y in range(x, N-x-1):
  
             # store current cell in temp variable
-            temp = mat[x][y]
+            temp = mat[x][y
  
             # move values from right to top
             mat[x][y] = mat[y][N-1-x]
