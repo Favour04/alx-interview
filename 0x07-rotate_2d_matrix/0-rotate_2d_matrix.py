@@ -10,39 +10,30 @@ python matrix clockwise
 - with x loop through the range of N / 2
 - loop through the range of x to N - x - 1
 - save the fist place value with temp = [y][N-x-1]
-- [y][N-x-1] = [x][y]  
+- [y][N-x-1] = [x][y]
 - [N-x-1][N-y-1] = temp
 - [N-y-1][x] = [N-x-1][N-y-1]
 - [x][y] = [N-y-1][x]
 """
 
 
-def rotateMatrix(mat):
+def rotate_2d_matrix(mat):
     xaxis = len(mat)
     yaxis = len(mat[0])
-    
+
     if xaxis >= yaxis:
         N = xaxis
     else:
-        N = yaxis 
+        N = yaxis
     # Consider all squares one by one
     for x in range(0, int(N / 2)):
- 
-        # Consider elements in group
-        # of 4 in current square
-        for y in range(x, N-x-1):
- 
-            # store current cell in temp variable
-            temp = mat[x][y
- 
-            # move values from right to top
-            mat[x][y] = mat[y][N-1-x]
- 
-            # move values from bottom to right
-            mat[y][N-1-x] = mat[N-1-x][N-1-y]
- 
-            # move values from left to bottom
-            mat[N-1-x][N-1-y] = mat[N-1-y][x]
- 
-            # assign temp to left
-            mat[N-1-y][x] = temp
+        for y in range(x, N-1-x):
+            temp = mat[x][N-y-1]
+
+            mat[x][N-y-1] = mat[y][x]
+
+            mat[y][x] = mat[N-x-1][y]
+
+            mat[N-x-1][y] = mat[N-y-1][N-x-1]
+
+            mat[N-y-1][N-x-1] = temp
